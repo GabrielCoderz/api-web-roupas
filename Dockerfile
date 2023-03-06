@@ -7,5 +7,4 @@ COPY . .
 # Build production image
 FROM dependencies as builder
 RUN npm run build
-EXPOSE 80
 CMD npm run start
