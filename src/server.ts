@@ -27,6 +27,6 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     })
 })
 
-app.listen(process.env.PORT || 80, () => console.log('Server online.'))
+const PORT = process.env.PORT || 8080
 
-module.exports = app;
+app.listen(PORT, () => console.log('Server online.'))
