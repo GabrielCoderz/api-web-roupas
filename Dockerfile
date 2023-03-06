@@ -16,4 +16,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 80
-CMD [ "node", "server.ts" ]
+CMD [ "node", "src/server.ts" ]
