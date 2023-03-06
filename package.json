@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node dist/server.js",
     "dev": "ts-node-dev --transpile-only src/server.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "gcp-build": "npm i npm-install-peers"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
