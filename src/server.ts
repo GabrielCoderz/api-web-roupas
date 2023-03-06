@@ -28,3 +28,5 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 })
 
 app.listen(process.env.PORT || 80, () => console.log('Server online.'))
+
+module.exports = app;
