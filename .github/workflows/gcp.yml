@@ -8,7 +8,7 @@ jobs:
   deploy:
     name: Setup Gcloud Account
     runs-on: ubuntu-latest
-    environment: portfolio-prod
+    environment: api-web-roupas
     env:
       IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/api-roupas:latest
     steps:
