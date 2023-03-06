@@ -9,6 +9,10 @@ app.use(express.json());
 app.use(cors());
 // app.use(router);
 
+app.get('/ola', (req, res) => {
+    res.send('olaaaa')
+})
+
 // Error handling
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     if(err instanceof Error) {
