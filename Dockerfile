@@ -1,7 +1,7 @@
 # Build dependencies
 FROM node:17-alpine as dependencies
 # WORKDIR /app
-WORKDIR $APP_HOME
+WORKDIR ./
 COPY package.json .
 RUN npm i
 COPY . . 
