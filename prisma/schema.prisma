@@ -30,6 +30,7 @@ model Cliente {
 model Endereco {
   id Int @id @default(autoincrement())
   cliente Cliente @relation(fields: [cliente_id], references: [id])
+  cliente_id Int
   cep String
   logradouro String
   bairro String
@@ -38,7 +39,6 @@ model Endereco {
   estado String
   cidade String
 
-  cliente_id Int
   @@index([cliente_id])
 }
 
