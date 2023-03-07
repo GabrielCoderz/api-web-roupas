@@ -7,7 +7,11 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(router);
+// app.use(router);
+
+app.get('/test', (req, res) => {
+    res.send('teste')
+})
 
 // Error handling
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
