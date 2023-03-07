@@ -18,7 +18,7 @@ class CreateUserService {
             throw new Error("Email incorrect");
         }
 
-        const userAlreadyExists = await prismaClient.Cliente.findFirst({
+        const userAlreadyExists = await prismaClient.cliente.findFirst({
             where: {
                 email: email
             }
@@ -33,7 +33,7 @@ class CreateUserService {
 
         console.log(passwordHash)
 
-        const user = await prismaClient.Cliente.create({
+        const user = await prismaClient.cliente.create({
             data: {
                 nome: nome,
                 email: email,
