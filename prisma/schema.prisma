@@ -25,6 +25,7 @@ model Cliente {
   updated_at DateTime? @default(now())
 
   endereco Endereco[]
+  avaliacao Avaliacao[]
 }
 
 model Endereco {
@@ -42,3 +43,74 @@ model Endereco {
   @@index([cliente_id])
 }
 
+model Avaliacao {
+  id Int @id @default(autoincrement())
+  cliente Cliente @relation(fields: [cliente_id], references: [id])
+  produto Produto @relation(fields: [produto_id], references: [id])
+  cliente_id Int
+  produto_id Int
+  titulo String
+  resposta String
+  nota String
+  comentario String?
+  imagem String?
+  likes String?
+  dislikes String?
+
+  @@index([cliente_id])
+  @@index([produto_id])
+}
+
+model Produto {
+  id Int @id @default(autoincrement())
+  categoria Categoria @relation(fields: [categoria_id], references: [id])
+  marca Marca @relation(fields: [marca_id], references: [id])
+  tamanho Tamanho @relation(fields: [tamanho_id], references: [id])
+  categoria_id Int
+  marca_id Int
+  tamanho_id Int
+  nome String
+  preco String
+
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  @@index([categoria_id])
+  @@index([marca_id])
+  @@index([tamanho_id])
+
+  avaliacao Avaliacao[]
+}
+
+model Marca {
+  id Int @id @default(autoincrement())
+  nome String
+  disponibilidade String
+
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  produto Produto[]
+}
+
+model Tamanho {
+  id Int @id @default(autoincrement())
+  nome String
+  disponibilidade String
+
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  produto Produto[]
+}
+
+model Categoria {
+  id Int @id @default(autoincrement())
+  nome String
+  descricao String
+
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  produto Produto[]
+}
