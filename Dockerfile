@@ -7,5 +7,5 @@ RUN npm i
 COPY . . 
 # Build production image
 FROM dependencies as builder
-RUN npm run build
-CMD npm run start
+RUN npm run build && npx prisma db push
+CMD npm run start 

@@ -6,8 +6,9 @@
   "scripts": {
     "start": "node dist/server.js",
     "dev": "ts-node-dev --transpile-only src/server.ts",
-    "build": "tsc",
-    "gcp-build": "npm i npm-install-peers"
+    "build": "npm run generate && tsc",
+    "generate": "npm -s run generate:prisma",
+    "generate:prisma": "prisma generate"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
