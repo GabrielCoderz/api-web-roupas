@@ -1,6 +1,6 @@
-// import { Router } from 'express';
+import { Router } from 'express';
 
-// import { CreateUserController } from './controllers/user/CreateUserController';
+import { CreateUserController } from './controllers/user/CreateUserController';
 // import { AuthUserController } from './controllers/user/AuthUserController';
 // import { DetailUserController } from './controllers/user/DetailUserController';
 // import { UpdateUserController } from './controllers/user/UpdateUserController';
@@ -20,11 +20,11 @@
 
 // import { isAuthenticated } from './middlewares/isAuthenticated';
 
-// const router = Router()
+const router = Router()
 
-// // --- User router ---
+// --- User router ---
 
-// router.post('/users', new CreateUserController().handle);
+router.post('/users', new CreateUserController().handle);
 // router.post('/session', new AuthUserController().handle);
 // router.get('/me', isAuthenticated, new DetailUserController().handle);
 // router.put('/users', isAuthenticated, new UpdateUserController().handle);
@@ -48,4 +48,4 @@
 
 // router.post('/subscribe', isAuthenticated, new SubscribeController().handle);
 
-// export { router };
+export { router };
